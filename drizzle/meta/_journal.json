@@ -15,6 +15,13 @@
       "when": 1726264446759,
       "tag": "0001_typical_silver_sable",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1726867022457,
+      "tag": "0002_good_yellow_claw",
+      "breakpoints": true
     }
   ]
 }
