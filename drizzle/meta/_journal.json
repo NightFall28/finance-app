@@ -22,6 +22,13 @@
       "when": 1726867022457,
       "tag": "0002_good_yellow_claw",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1726880555126,
+      "tag": "0003_conscious_zarek",
+      "breakpoints": true
     }
   ]
 }
