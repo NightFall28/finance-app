@@ -1,17 +1,17 @@
-import { InferRequestType, InferResponseType } from "hono";
+import { InferResponseType } from "hono";
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner";
 
 import { client } from "@/lib/hono"
 
-type ResponseType = InferResponseType<typeof client.api.categories[":id"]["$delete"]>
+type ResponseType = InferResponseType<typeof client.api.transactions[":id"]["$delete"]>
 
-export const useDeleteCategory = (id?: string) => {
+export const useDeleteTransaction = (id?: string) => {
     const queryClient = useQueryClient()
 
     const mutation = useMutation<ResponseType, Error>({
         mutationFn: async () => {
-            const response = await client.api.categories[":id"]["$delete"]({
+            const response = await client.api.transactions[":id"]["$delete"]({
                 param: {id}
             })
 
@@ -22,12 +22,12 @@ export const useDeleteCategory = (id?: string) => {
             return await response.json()
         },
         onSuccess: () => {
-            toast.success('Category deleted')
-            queryClient.invalidateQueries({queryKey: ['categories']})
-            queryClient.invalidateQueries({queryKey: ['category', {id}]})
+            toast.success('Transaction deleted')
+            queryClient.invalidateQueries({queryKey: ['transactions']})
+            queryClient.invalidateQueries({queryKey: ['transaction', {id}]})
         },
         onError: () => {
-            toast.error('Failed to delete category')
+            toast.error('Failed to delete transaction')
         }
     })
 
