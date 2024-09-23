@@ -21,8 +21,9 @@ import { useBulkDeleteTransactions } from "@/features/transactions/api/use-bulk-
 const TransactionsPage = () => {
     const newTransaction = useNewTransaction();
     const transactionsQuery = useGetTransactions();
-    const transactions = transactionsQuery.data || [];
+
     const deleteTransactions = useBulkDeleteTransactions();
+    const transactions = transactionsQuery.data || [];
     const isDisabled = transactionsQuery.isLoading || deleteTransactions.isPending;
 
     if (transactionsQuery.isLoading) {
@@ -55,10 +56,10 @@ const TransactionsPage = () => {
                     </Button>
                 </CardHeader>
                 <CardContent>
-                    <DataTable disabled={isDisabled} onDelete={(row) => {
+                    <DataTable filterKey="payee" disabled={isDisabled} onDelete={(row) => {
                         const ids = row.map((r) => r.original.id)
                         deleteTransactions.mutate({ids})
-                    }} filterKey="name" columns={columns} data={transactions} />
+                    }} columns={columns} data={transactions} />
                 </CardContent>
             </Card>
         </div>
