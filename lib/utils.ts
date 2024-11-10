@@ -63,7 +63,7 @@ export function fillMissingDays(
   })
 
   const transactionsByDay = allDays.map((day) => {
-    const found = activeDays.find((d) => {isSameDay(d.date, day)})
+    const found = activeDays.find((d) => isSameDay(d.date, day))
     if (found) {
       return found
     }
@@ -75,6 +75,8 @@ export function fillMissingDays(
       }
     }
   })
+  
+  // console.log("Transactions by day:", transactionsByDay)
 
   return transactionsByDay
 }
