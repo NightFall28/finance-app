@@ -148,6 +148,7 @@ const app = new Hono()
                 .orderBy(transactions.date)
 
             console.log("Active days data:", activeDays);
+            console.log("Final categories data:", finalCategories);
 
             const days = fillMissingDays(
                 activeDays,
