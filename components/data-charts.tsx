@@ -21,8 +21,8 @@ export const DataCharts = () => {
         )
     }
 
-    console.log("Fetched data:", data);
-    console.log("Fetched data categories:", data?.categories);
+    // console.log("Fetched data:", data);
+    // console.log("Fetched data categories:", data?.categories);
 
     return ( 
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">

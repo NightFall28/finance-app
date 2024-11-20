@@ -25,7 +25,7 @@ export const useGetSummary = () => {
             }
 
             const { data } = await response.json()
-            console.log("Raw API response data:", data);
+            // console.log("Raw API response data:", data);
 
             return {
                 ...data,

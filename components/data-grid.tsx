@@ -26,7 +26,7 @@ export const DataGrid = () => {
         )
     }
 
-    console.log("Grid Data: ", data)
+    // console.log("Grid Data: ", data)
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-2 mb-8">
