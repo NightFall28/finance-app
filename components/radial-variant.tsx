@@ -3,7 +3,6 @@ import {
     RadialBarChart,
     Legend,
     ResponsiveContainer,
-    Tooltip,
 } from "recharts"
 
 import { formatCurrency } from "@/lib/utils"
